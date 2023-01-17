@@ -36,15 +36,16 @@ function App() {
   const formatBackground = () => {
     if (!weather) return "from-cyan-700 to-blue-700";
     if (weather.details === 'Clouds') return "bg-cloud";
-    if (weather.details === 'Mist') return "bg-snow";
+    if (weather.details === 'Haze') return "bg-haze";
     if (weather.details === 'Rain') return "bg-rain";
-    if (weather.details === 'snow') return "bg-snow";
+    if (weather.details === 'Snow') return "bg-snow";
+    if (weather.details === 'Sun') return "bg-sunny";
 
   };
   return (
-    <div  className={`mx-auto max-w-screen-sm m-4 bg-cover bg-no-repeat bg-center relative  shadow-xl shadow-gray-400 ${formatBackground()}`}>
+    <div  className={`mx-auto max-w-screen-sm sm:my-4 bg-cover bg-no-repeat bg-center relative  shadow-xl shadow-gray-400 ${formatBackground()}`}>
       
-      <div className='bg-gray-800/50 py-3 px-12 z-40 '>
+      <div className='bg-gray-800/50 py-3 px-4 sm:px-12 z-40 '>
 
         <Inputs setQuery={setQuery} units={units} setUnits={setUnits}/>
 

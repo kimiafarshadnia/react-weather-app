@@ -8,11 +8,17 @@ module.exports = {
       backgroundImage: {
         'cloud': "url('assets/images/cloud.jpeg')",
         'rain': "url('assets/images/rainy.jpeg')",
-        'mist': "url('assets/images/mist.jpeg')",
+        'haze': "url('assets/images/haze.jpeg')",
         'snow': "url('assets/images/snow.png')",
-        'suny': "url('assets/images/cloudy.jpeg')",
+        'suny': "url('assets/images/sunny.jpeg')",
+      },
+      
+      fontSize: {
+        '2xs': ['0.6rem'],
+        '1xs': ['0.7rem'],
       }
     },
+    
   },
   plugins: [],
 }

@@ -12,8 +12,8 @@ function Inputs({ setQuery, units, setUnits }) {
   };
 
   const handleSearchClick = (e) => {
-  
-    if (city !== "" && e.key === 'Enter'){
+  // && e.key === 'Enter'
+    if (city !== ""){
       setQuery({ q: city });
       setCity("")
     }
@@ -23,7 +23,7 @@ function Inputs({ setQuery, units, setUnits }) {
   const handleLocationClick = () => {
 
     if (navigator.geolocation) {
-      toast.info("Fetching users location.");
+      // toast.info("Fetching users location.");
       navigator.geolocation.getCurrentPosition((position) => {
         toast.success("Location fetched!");
         let lat = position.coords.latitude;
@@ -43,35 +43,31 @@ function Inputs({ setQuery, units, setUnits }) {
   
   }
   return (
-    <div className="flex flex-row justify-center my-6">
-      <div className="flex flex-row w-3/4 items-center justify-center space-x-4">
+    <div className="flex flex-col sm:flex-row justify-center my-6">
+      <div className="flex flex-row items-center justify-center">
 
         <input
           value={city}
           onChange={handleSearchInput}
           type="text"
-          onKeyPress={handleSearchClick}
+          // onKeyPress={handleSearchClick}
           placeholder="Search for city...."
-          className="text-xl font-light p-2 w-full shadow-xl focus:outline-none capitalize placeholder:lowercase"
+          className="bg-sky-900/75 border-white rounded-md text-xl font-light px-2 sm:p-2 w-full shadow-xl focus:outline-none capitalize placeholder:lowercase placeholder:text-gray-300 placeholder:text-sm sm:placeholder:text-base"
         />
-
-    
-      <UilSearch
+         <UilSearch
           size={25}
           className="text-white cursor-pointer transition ease-out hover:scale-125"
           onClick={handleSearchClick}
         />
-      
 
-        <UilLocationPoint
+<UilLocationPoint
           size={25}
           className="text-white cursor-pointer transition ease-out hover:scale-125"
           onClick={handleLocationClick}
         />
-
       </div>
 
-      <div className="flex flex-row w-1/4 items-center justify-center">
+      <div className="flex flex-row w-full items-center justify-around">
 
         <button
           name="metric"
