@@ -21,9 +21,9 @@ function App() {
 
       await getFormattedWeatherData({ ...query, units }).then((data) => {
         
-        // toast.success(
-        //   `Successfully fetched weather for ${data.name}, ${data.country}.`
-        // );
+        toast.success(
+          `Successfully fetched weather for ${data.name}, ${data.country}.`
+        );
 
         setWeather(data);
       }).catch(error => console.error("Error", error));
@@ -39,13 +39,13 @@ function App() {
     if (weather.details === 'Haze') return "bg-haze";
     if (weather.details === 'Rain') return "bg-rain";
     if (weather.details === 'Snow') return "bg-snow";
-    if (weather.details === 'Sun') return "bg-sunny";
+    if (weather.details === 'Clear') return "bg-suny";
 
   };
   return (
     <div  className={`mx-auto max-w-screen-sm sm:my-4 bg-cover bg-no-repeat bg-center relative  shadow-xl shadow-gray-400 ${formatBackground()}`}>
       
-      <div className='bg-gray-800/50 py-3 px-4 sm:px-12 z-40 '>
+      <div className='bg-gray-800/50 p-3 sm:px-12 z-40 '>
 
         <Inputs setQuery={setQuery} units={units} setUnits={setUnits}/>
 

@@ -43,7 +43,38 @@ function Inputs({ setQuery, units, setUnits }) {
   
   }
   return (
-    <div className="flex flex-col sm:flex-row justify-center my-6">
+    <div className="flex flex-col justify-center mb-6">
+      <div className="flex justify-between items-center mb-6">
+
+        <div>
+          <UilLocationPoint
+            size={25}
+            className="text-white cursor-pointer transition ease-out hover:scale-125"
+            onClick={handleLocationClick}
+          />
+        </div>
+
+        <div className="flex flex-row items-center justify-around">
+
+          <button
+            name="metric"
+            className="text-xl text-white font-light transition ease-out hover:scale-125"
+            onClick={handleUnitsChange}
+          >
+            °C
+          </button>
+
+          <p className="text-xl text-white mx-1">|</p>
+
+          <button
+            name="imperial"
+            className="text-xl text-white font-light transition ease-out hover:scale-125"
+            onClick={handleUnitsChange}
+          >
+            °F
+          </button>
+        </div>
+      </div>
       <div className="flex flex-row items-center justify-center">
 
         <input
@@ -52,40 +83,13 @@ function Inputs({ setQuery, units, setUnits }) {
           type="text"
           // onKeyPress={handleSearchClick}
           placeholder="Search for city...."
-          className="bg-sky-900/75 border-white rounded-md text-xl font-light px-2 sm:p-2 w-full shadow-xl focus:outline-none capitalize placeholder:lowercase placeholder:text-gray-300 placeholder:text-sm sm:placeholder:text-base"
+          className="bg-sky-900/75 border-white rounded-md sm:text-xl font-light px-2 py-1 sm:p-2 w-full shadow-xl focus:outline-none capitalize placeholder:lowercase placeholder:text-gray-300 placeholder:text-sm sm:placeholder:text-base mr-2 text-white"
         />
          <UilSearch
           size={25}
           className="text-white cursor-pointer transition ease-out hover:scale-125"
           onClick={handleSearchClick}
         />
-
-<UilLocationPoint
-          size={25}
-          className="text-white cursor-pointer transition ease-out hover:scale-125"
-          onClick={handleLocationClick}
-        />
-      </div>
-
-      <div className="flex flex-row w-full items-center justify-around">
-
-        <button
-          name="metric"
-          className="text-xl text-white font-light transition ease-out hover:scale-125"
-          onClick={handleUnitsChange}
-        >
-          °C
-        </button>
-
-        <p className="text-xl text-white mx-1">|</p>
-
-        <button
-          name="imperial"
-          className="text-xl text-white font-light transition ease-out hover:scale-125"
-          onClick={handleUnitsChange}
-        >
-          °F
-        </button>
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ const TemperatureAndDetails = ({weather:{details, icon, temp, temp_min, temp_max
                 <p>{details}</p>
             </div>
 
-            <div className="flex flex-row items-center justify-between text-white py-3">
+            <div className="flex flex-row items-center justify-between text-white py-3 mb-3">
                 <img src={iconUrlFromCode(icon)} alt="" className="w-16 sm:w-20"/>
 
                 <p className="text-4xl sm:text-5xl">{`${temp.toFixed()}°`}</p>
@@ -37,27 +37,27 @@ const TemperatureAndDetails = ({weather:{details, icon, temp, temp_min, temp_max
                 </div>
             </div>
 
-            <div className="flex flex-row items-center justify-around text-white text-2xs sm:text-sm ">
+            <div className="flex flex-row justify-around text-white text-2xs sm:text-sm ">
                 <div className='flex flex-col sm:flex-row items-center'>
                     <UilSun/>
-                    <p className='font-light '>Sunrise </p>
-                    <span className='font-medium ml-1'>{formatToLocalTime(sunrise, timezone, 'hh:mm')}</span>
+                    <p className='font-light sm:ml-1'>Sunrise </p>
+                    <span className='font-medium sm:ml-1'>{formatToLocalTime(sunrise, timezone, 'hh:mm')}</span>
                 </div>
 
                 <div className='flex flex-col sm:flex-row items-center'>
                     <UilSunset/>
-                    <p className='font-light '>Sunset </p>
-                    <span className='font-medium ml-1'>{formatToLocalTime(sunset, timezone, 'hh:mm')}</span>
+                    <p className='font-light sm:ml-1'>Sunset </p>
+                    <span className='font-medium sm:ml-1'>{formatToLocalTime(sunset, timezone, 'hh:mm')}</span>
                 </div>
                 
                 <div className='flex flex-col sm:flex-row items-center'>
                     <UilSun/>
-                    <p className='font-light '>H : <span className='font-medium ml-1'>{`${temp_max.toFixed()}°`}</span></p>
+                    <p className='font-light sm:ml-1'>H : <span className='font-medium sm:ml-1'>{`${temp_max.toFixed()}°`}</span></p>
                 </div>
 
                 <div className='flex flex-col sm:flex-row items-center'>
                     <UilSun/>
-                    <p className='font-light '>L : <span className='font-medium ml-1'>{`${temp_min.toFixed()}°`}</span></p>
+                    <p className='font-light sm:ml-1'>L : <span className='font-medium sm:ml-1'>{`${temp_min.toFixed()}°`}</span></p>
                 </div>
                 
     
